@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Good Thymes Virtual Grocery</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+
+<h1>Updated List</h1>
+
+<table>
+    <tr>
+        <th>Country</th>
+        <th>State</th>
+        <th>Total cases reported (work in process)</th>
+    </tr>
+    <tr th:each="locationStat : ${locationStats}">
+        <td th:text="${locationStat.country}"></td>
+        <td th:text="${locationStat.state}"></td>
+        <td th:text="${locationStat.latestTotalCases}">0</td>
+    </tr>
+</table>
+
+<p>
+    <a href="../home.html" th:href="@{/}">Return to home</a>
+</p>
+
+</body>
+
+</html>
